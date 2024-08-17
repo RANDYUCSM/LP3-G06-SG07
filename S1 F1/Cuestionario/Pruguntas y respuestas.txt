@@ -1,0 +1,16 @@
+¿Java es compilado o interpretado?
+-Java es compilado a bytecode y interpretado por la JVM en tiempo de ejecución.
+
+Diferencias entre lenguajes compilados e interpretados:
+-Compilado: Se traduce a código máquina antes de ejecutar (ej. C, C++). Más rápido pero menos portátil.
+-Interpretado: Se ejecuta línea por línea (ej. Python, JavaScript). Más portátil pero más lento.
+
+Ventajas de Java:
+-Portabilidad (ejecuta en cualquier plataforma con JVM).
+-Gestión automática de memoria.
+-Seguridad robusta.
+-Gran ecosistema y soporte.
+-Buen soporte para programación concurrente.
+
+Versión de JDK más usada:
+-Java 8, Java 11, y Java 17 son populares. Java 8 es muy usado por su estabilidad, mientras que 11 y 17 son versiones LTS recientes con soporte extendido.
