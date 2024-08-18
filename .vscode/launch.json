@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Ejer6",
+      "request": "launch",
+      "mainClass": "Ejer6",
+      "projectName": "LP3-G07-SG07_c8dc00c8"
+    },
+    {
+      "type": "java",
       "name": "Ejer1",
       "request": "launch",
       "mainClass": "Ejer1",
