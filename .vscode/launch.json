@@ -2,6 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "ArregloNumeros_4",
+      "request": "launch",
+      "mainClass": "ArregloNumeros_4",
+      "projectName": "LP3-G07-SG07_c8dc00c8"
+    },
+    {
+      "type": "java",
+      "name": "NumerosPrimos_1",
+      "request": "launch",
+      "mainClass": "NumerosPrimos_1",
+      "projectName": "LP3-G07-SG07_c8dc00c8"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
