@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Ejer1",
+      "request": "launch",
+      "mainClass": "Ejer1",
+      "projectName": "LP3-G07-SG07_c8dc00c8"
+    },
+    {
+      "type": "java",
+      "name": "Ejer4",
+      "request": "launch",
+      "mainClass": "Ejer4",
+      "projectName": "LP3-G07-SG07_c8dc00c8"
+    },
+    {
+      "type": "java",
       "name": "ArregloNumeros_4",
       "request": "launch",
       "mainClass": "ArregloNumeros_4",
