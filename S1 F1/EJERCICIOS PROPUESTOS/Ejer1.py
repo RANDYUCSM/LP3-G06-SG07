@@ -1,4 +1,3 @@
-#Randy
 def suma_arreglo(arr):
     return sum(arr)
 
