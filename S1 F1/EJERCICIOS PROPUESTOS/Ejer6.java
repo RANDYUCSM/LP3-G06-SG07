@@ -1,3 +1,4 @@
+//El usuario ingresará un número de horas, de minutos y segundos y nos devuelva el equivalente en segundos.
 import java.util.Scanner;
 
 public class Ejer6 { //ConvertidorTiempoASegundos

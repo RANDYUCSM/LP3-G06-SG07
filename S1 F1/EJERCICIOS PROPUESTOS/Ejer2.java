@@ -1,3 +1,4 @@
+//El usuario ingresará números en un arreglo unidimensional de 10, cada número que ingrese el usuario debe ser mayor al anterior.
 import java.util.Scanner;
 
 public class Ejer2 {

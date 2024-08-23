@@ -1,3 +1,4 @@
+//Lanza un dado 20000 veces y guarda la frecuencia de cada una de las 6 caras en un arreglo
 import java.util.Random;
 public class Ejer3 {  //LanzarDado
     public static void main(String[] args) {
