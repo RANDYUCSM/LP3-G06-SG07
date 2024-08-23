@@ -1,23 +1,29 @@
-public class Ejer5 { //Estacionamiento
-    public static void main(String[] args) {
-        int numerohoras = 10; 
-        double cargo = calcularCargo(numerohoras);
-        System.out.println("El cargo por " + numerohoras + " horas es:" + cargo);
+import java.util.Scanner;
+
+    public class Ejer5 { //Estacionamiento
+        public static double calcularCargo(double horas) {
+            double cargo;
+            if (horas <= 1) {
+                cargo = 3.00;
+            } else {
+                cargo = 3.00;
+                double horasAdicionales = horas - 1; // Cargo por horas adicionales
+                cargo += horasAdicionales * 0.50;
+            }
+            if (cargo > 12.00) {
+                cargo = 12.00;
+            }
+            
+            return cargo;
+        }
+    
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Ingrese el número de horas: ");
+            double horas = scanner.nextDouble();
+            double cargo = calcularCargo(horas);
+            System.out.println("El cargo por el estacionamiento es: S/ " + cargo);
+            scanner.close();
+        }
     }
-    public static double calcularCargo(int horas) {
-        double cargo = 0.0;
-        int horasRestantes = horas;
-        if (horasRestantes > 0) {
-            cargo = 3.00;
-            horasRestantes--;
-        }
-        while (horasRestantes > 0 && cargo < 12.00) {
-            cargo += 0.50;
-            horasRestantes--;
-        }
-        if (cargo > 12.00) {
-            cargo = 12.00;
-        }
-        return cargo;
-    }
-}
+    
