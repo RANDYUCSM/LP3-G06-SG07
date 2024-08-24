@@ -1,5 +1,5 @@
 //Lanza un dado 20000 veces y guarda la frecuencia de cada una de las 6 caras en un arreglo
-import java.util.Random;
+import java.util.Random; //se utiliza para generar números pseudoaleatorios
 public class Ejer3 {  //LanzarDado
     public static void main(String[] args) {
         int[] frecuencias = new int[6]; 
