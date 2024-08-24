@@ -9,8 +9,8 @@ import java.util.Scanner;
                 cargo = 3.00;
             } else {
                 cargo = 3.00;
-                double horasAdicionales = horas - 1; // Cargo por horas adicionales
-                cargo += horasAdicionales * 0.50;
+                double horasAdicionales = horas - 1; 
+                cargo += horasAdicionales * 0.50; // Cargo por horas adicionales
             }
             if (cargo > 12.00) {
                 cargo = 12.00;
