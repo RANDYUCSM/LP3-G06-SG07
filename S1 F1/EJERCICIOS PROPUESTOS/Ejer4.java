@@ -1,4 +1,4 @@
-//Programe una función menor que reciba 3 números decimales y devuelva el menor de los 3.
+//Programe una función menor que tenga 3 números decimales y devuelva el menor de los 3.
 public class Ejer4 {
 
     public static double menor(double num1, double num2, double num3) {
