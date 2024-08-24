@@ -17,7 +17,7 @@ public class Ejer2 {
                     anterior = numero;
                     break;  
                 } else {
-                    System.out.println("El número debe ser mayor que el anterior (" + anterior + "). Inténtelo de nuevo.");
+                    System.out.println("El número debe ser mayor que el anterior (" + anterior + ").");
                 }
             }
         }
