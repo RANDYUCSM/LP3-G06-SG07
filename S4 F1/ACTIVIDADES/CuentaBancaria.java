@@ -3,20 +3,6 @@ class SaldoInsuficienteException extends Exception {
         super(mensaje);
     }
 }
-
-
-class CuentaNoEncontradaException extends Exception {
-    public CuentaNoEncontradaException(String mensaje) {
-        super(mensaje);
-    }
-}
-
-
-class SaldoNoCeroException extends Exception {
-    public SaldoNoCeroException(String mensaje) {
-        super(mensaje);
-    }
-}
 //
 public class CuentaBancaria {
     private String numeroCuenta;
@@ -24,7 +10,7 @@ public class CuentaBancaria {
     private double saldo;
 
 
-    // Constructor
+    // Constructor con validación
     public CuentaBancaria(String numeroCuenta, String titular, double saldoInicial) {
         if (saldoInicial < 0) {
             throw new IllegalArgumentException("El saldo inicial no puede ser negativo.");
@@ -53,27 +39,6 @@ public class CuentaBancaria {
         }
         saldo -= monto;
         System.out.println("Retiro exitoso. Nuevo saldo: " + saldo);
-    }
-
-
-    public void transferir(CuentaBancaria destino, double monto) throws SaldoInsuficienteException, CuentaNoEncontradaException {
-        if (destino == null) {
-            throw new CuentaNoEncontradaException("La cuenta destino no fue encontrada.");
-        }
-        if (monto <= 0) {
-            throw new IllegalArgumentException("El monto a transferir debe ser positivo.");
-        }
-        this.retirar(monto); // Verifica si hay suficiente saldo en la cuenta 
-        destino.depositar(monto); // Transfiere el monto a la cuenta destino
-        System.out.println("Transferencia de " + monto + " realizada de " + this.numeroCuenta + " a " + destino.numeroCuenta);
-    }
-
-
-    public void cerrarCuenta() throws SaldoNoCeroException {
-        if (saldo != 0) {
-            throw new SaldoNoCeroException("No se puede cerrar la cuenta. El saldo debe ser cero.");
-        }
-        System.out.println("La cuenta " + numeroCuenta + " ha sido cerrada.");
     }
 
 
