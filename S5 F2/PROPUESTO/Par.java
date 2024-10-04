@@ -46,7 +46,7 @@ public class PruebaPar {
         System.out.println("par1 es igual a par3 " + par1.esIgual(par3));  
     }
 }
-3//
+4//
 import java.util.ArrayList;
 
 public class Contenedor<F, S> {
@@ -96,7 +96,7 @@ public class Contenedor<F, S> {
         }
     }
 }
-4//
+3//
 public class Main {
 
     public static <F, S> void imprimirPar(Par<F, S> par) {
