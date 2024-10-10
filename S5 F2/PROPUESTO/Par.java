@@ -31,7 +31,7 @@ public class Par<F, S> {
         return this.primero.equals(otroPar.getPrimero()) && this.segundo.equals(otroPar.getSegundo());
     }
 }
-//
+2//
 public class PruebaPar {
     public static void main(String[] args) {
         Par<Integer, String> par1 = new Par<>(1, "Uno");
@@ -46,7 +46,7 @@ public class PruebaPar {
         System.out.println("par1 es igual a par3 " + par1.esIgual(par3));  
     }
 }
-//
+4//
 import java.util.ArrayList;
 
 public class Contenedor<F, S> {
@@ -96,7 +96,7 @@ public class Contenedor<F, S> {
         }
     }
 }
-//
+3//
 public class Main {
 
     public static <F, S> void imprimirPar(Par<F, S> par) {
