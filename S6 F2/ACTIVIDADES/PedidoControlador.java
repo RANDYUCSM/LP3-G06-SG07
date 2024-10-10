@@ -46,11 +46,11 @@ public class PedidoControlador {
                     vista.mostrarMensaje("Saliendo...");
                     break;
                 default:
-                    vista.mostrarMensaje("Opción no válida. Inténtalo de nuevo.");
+                    vista.mostrarMensaje("Opción no válida.");
             }
         } while (!opcion.equals("3"));
 
-        vista.cerrarScanner();  // Aseguramos que cerramos el Scanner solo al finalizar
+        vista.cerrarScanner();  
     }
 }
 //MODELO (Pedido)
@@ -104,7 +104,7 @@ public class PedidoVista {
 
     public String solicitarNombrePlato() {
         System.out.print("Introduce el nombre del plato: ");
-        return scanner.nextLine().trim();  // Se agrega trim() para evitar espacios en blanco no deseados
+        return scanner.nextLine().trim();  
     }
 
     public void mostrarPedidos(List<Pedido> pedidos) {
@@ -127,7 +127,7 @@ public class PedidoVista {
 
     public String solicitarOpcion() {
         System.out.print("Selecciona una opción: ");
-        return scanner.nextLine().trim();  // Se asegura que no haya espacios en blanco alrededor
+        return scanner.nextLine().trim();  
     }
 
     public void mostrarMensaje(String mensaje) {
