@@ -14,13 +14,19 @@ public class InventarioController {
         this.vista = vista;
     }
 
-    public void agregarItem(String nombre, int cantidad, String tipo, String descripcion) {
+    public void agregarItem() {
+        String nombre = vista.solicitarDato("Introduce el nombre del item: ");
+        int cantidad = vista.solicitarCantidad("Introduce la cantidad: ");
+        String tipo = vista.solicitarDato("Introduce el tipo (Arma, Poción, etc.): ");
+        String descripcion = vista.solicitarDato("Introduce la descripción: ");
+
         Item item = new Item(nombre, cantidad, tipo, descripcion);
         modelo.agregarItem(item);
         vista.mostrarMensaje("Item agregado: " + nombre);
     }
 
-    public void eliminarItem(String nombre) {
+    public void eliminarItem() {
+        String nombre = vista.solicitarDato("Introduce el nombre del item a eliminar: ");
         Item item = modelo.buscarItem(nombre);
         if (item != null) {
             modelo.eliminarItem(item);
@@ -34,12 +40,8 @@ public class InventarioController {
         vista.mostrarInventario(modelo.obtenerItems());
     }
 
-    public void mostrarDetalles(String nombre) {
-        Item item = modelo.buscarItem(nombre);
-        vista.mostrarDetallesItem(item);
-    }
-
-    public void buscarItem(String nombre) {
+    public void buscarItem() {
+        String nombre = vista.solicitarDato("Introduce el nombre del item a buscar: ");
         Item item = modelo.buscarItem(nombre);
         vista.mostrarDetallesItem(item);
     }
@@ -134,7 +136,6 @@ public class InventarioModel {
 package vista;
 
 import modelo.Item;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -147,18 +148,27 @@ public class InventarioView {
 
     public void mostrarInventario(List<Item> items) {
         if (items.isEmpty()) {
-            System.out.println("El inventario está vacío.");
+            mostrarMensaje("El inventario está vacío.");
         } else {
-            System.out.println("Inventario:");
+            mostrarMensaje("Inventario:");
             for (Item item : items) {
                 System.out.println(item);
             }
         }
     }
 
-    public String solicitarNombreItem() {
-        System.out.print("Introduce el nombre del item: ");
+    public String solicitarDato(String mensaje) {
+        System.out.print(mensaje);
         return scanner.nextLine();
+    }
+
+    public int solicitarCantidad(String mensaje) {
+        System.out.print(mensaje);
+        while (!scanner.hasNextInt()) {
+            System.out.println("Entrada no válida. Por favor, introduce un número entero.");
+            scanner.next(); // Descarta la entrada no válida
+        }
+        return scanner.nextInt();
     }
 
     public void mostrarMensaje(String mensaje) {
@@ -173,6 +183,7 @@ public class InventarioView {
         }
     }
 }
+
 //MAIN
 package principal;
 
@@ -192,7 +203,7 @@ public class Main {
         String opcion;
 
         do {
-            System.out.println("\n :3--- Sistema de Gestión de Inventario --- :3");
+            System.out.println("\n--- Sistema de Gestión de Inventario ---");
             System.out.println("1. Agregar Item");
             System.out.println("2. Ver Inventario");
             System.out.println("3. Buscar Item");
@@ -203,46 +214,20 @@ public class Main {
 
             switch (opcion) {
                 case "1":
-
-                    System.out.print("Introduce el nombre del item: ");
-                    String nombre = scanner.nextLine();
-
-                    System.out.print("Introduce la cantidad: ");
-                    int cantidad = Integer.parseInt(scanner.nextLine());
-
-                    System.out.print("Introduce el tipo (Arma, Poción, etc.): ");
-                    String tipo = scanner.nextLine();
-
-                    System.out.print("Introduce la descripción: ");
-                    String descripcion = scanner.nextLine();
-
-                    controlador.agregarItem(nombre, cantidad, tipo, descripcion);
+                    controlador.agregarItem();
                     break;
-
                 case "2":
-    
                     controlador.verInventario();
                     break;
-
                 case "3":
-       
-                    System.out.print("Introduce el nombre del item a buscar: ");
-                    String nombreBuscar = scanner.nextLine();
-                    controlador.buscarItem(nombreBuscar);
+                    controlador.buscarItem();
                     break;
-
                 case "4":
-           
-                    System.out.print("Introduce el nombre del item a eliminar: ");
-                    String nombreEliminar = scanner.nextLine();
-                    controlador.eliminarItem(nombreEliminar);
+                    controlador.eliminarItem();
                     break;
-
                 case "5":
-          
-                    System.out.println("Saliendo del sistema...");
+                    System.out.println("Saliendo del inventario");
                     break;
-
                 default:
                     System.out.println("Opción no válida. Inténtalo de nuevo.");
                     break;
@@ -252,3 +237,4 @@ public class Main {
         scanner.close();
     }
 }
+
