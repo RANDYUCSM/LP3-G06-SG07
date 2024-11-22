@@ -52,7 +52,7 @@ public class TemperaturaDiaria extends JFrame {
             double[] temperatures = new double[7];
             for (int i = 0; i < 7; i++) {
                 temperatures[i] = Double.parseDouble(tempFields[i].getText());
-                if (temperatures[i] < -50 || temperatures[i] > 50) {
+                if (temperatures[i] < -20 || temperatures[i] > 28.8) {
                     throw new NumberFormatException("Temperatura fuera de rango");
                 }
             }
